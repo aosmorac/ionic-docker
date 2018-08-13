@@ -1,0 +1,13 @@
+version: "3.3"
+services:
+  ionic:
+    build: .
+    image: mobile:ionic
+    container_name: ionic-mobile
+    command: ionic serve
+    volumes:
+      - "/dev/bus/usb:/dev/bus/usb" 
+      - ~/.gradle:/root/.gradle
+    ports:
+      - "8100:8100"
+      - "35729:35729"
